@@ -1,4 +1,4 @@
-# Ohjelmistotekniikka 2020, harjoitustyö
+# Ohjelmistotekniikka, harjoitustyö
 
 ## Tehtävät
 ### Viikko 1
