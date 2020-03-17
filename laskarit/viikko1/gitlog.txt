@@ -12,7 +12,7 @@ commit 3f6ec542208c1559dd27c44933ba8a55bb032a04
 Author: Valokoodari <28293838+Valokoodari@users.noreply.github.com>
 Date:   Tue Mar 17 16:14:32 2020 +0200
 
-    lisätty tiedostoja
+    lisättiin tiedostoja
 
  tiedostoja/file1 | 0
  tiedostoja/file2 | 0
