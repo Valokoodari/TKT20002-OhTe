@@ -1,0 +1,113 @@
+commit 8711d45477ea2a007e76323e3c55e88f4def9b19
+Author: Valokoodari <28293838+Valokoodari@users.noreply.github.com>
+Date:   Tue Mar 17 16:22:30 2020 +0200
+
+    git ei tykkää tyhjistä tiedostoista
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 3f6ec542208c1559dd27c44933ba8a55bb032a04
+Author: Valokoodari <28293838+Valokoodari@users.noreply.github.com>
+Date:   Tue Mar 17 16:14:32 2020 +0200
+
+    lisätty tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 44cb9d3c1e8c9abcd5525fe947279dc30e985310
+Author: Valokoodari <28293838+Valokoodari@users.noreply.github.com>
+Date:   Tue Mar 17 16:06:48 2020 +0200
+
+    lisää muutoksia
+
+ eka.txt    | 4 +++-
+ kolmas.txt | 1 +
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+commit ce2a11dbbd71d0e16115b88f3dd8491ba4fa5cec
+Author: Valokoodari <28293838+Valokoodari@users.noreply.github.com>
+Date:   Tue Mar 17 16:04:21 2020 +0200
+
+    tiedosto.txt nimetty uudelleen
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 2e8e487d683bd8c435cd26b916ac9c6bf0f7ebfa
+Author: Valokoodari <28293838+Valokoodari@users.noreply.github.com>
+Date:   Tue Mar 17 16:02:29 2020 +0200
+
+    toinen.txt poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 8f6e61ae2ca0bcce5a2e74a8b163d765cb69c71c
+Author: Valokoodari <28293838+Valokoodari@users.noreply.github.com>
+Date:   Tue Mar 17 16:01:23 2020 +0200
+
+    hieno muutos
+
+ tiedosto.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 0e03e03187f88a9128967c808caab172af7c7c8f
+Author: Valokoodari <28293838+Valokoodari@users.noreply.github.com>
+Date:   Tue Mar 17 16:00:29 2020 +0200
+
+    paljon tekstiä
+
+ tiedosto.txt | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+commit e7b74f15e608ebc8bdce80a44ec8085f6f1ba173
+Author: Valokoodari <28293838+Valokoodari@users.noreply.github.com>
+Date:   Tue Mar 17 15:57:04 2020 +0200
+
+    hakemisto stuff luotu tiedoston kanssa
+
+ stuff/tavaralista.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 58f2ae2ac23ed1f51c59ac9c43bc4bf763ac9a11
+Author: Valokoodari <28293838+Valokoodari@users.noreply.github.com>
+Date:   Tue Mar 17 15:55:12 2020 +0200
+
+    lisää sisältöä tiedostoihin
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 78df60f1b1a1e16a9f7c4c715987c62084b4e012
+Author: Valokoodari <28293838+Valokoodari@users.noreply.github.com>
+Date:   Tue Mar 17 15:53:35 2020 +0200
+
+    kolmas.txt luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 65b97a6c3c2341ebaf7a2b04115b58c71e80e89d
+Author: Valokoodari <28293838+Valokoodari@users.noreply.github.com>
+Date:   Tue Mar 17 15:48:24 2020 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 4cbfc427dad525ca852b960ddd12ced76b65f7b2
+Author: Valokoodari <28293838+Valokoodari@users.noreply.github.com>
+Date:   Tue Mar 17 15:45:43 2020 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
