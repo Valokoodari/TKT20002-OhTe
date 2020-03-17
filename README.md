@@ -1,8 +1,6 @@
-# Ohjelmistotekniikka 2020
+# Ohjelmistotekniikka 2020, harjoitustyö
 
-Tässä on toistaiseksi vain hieman tekstiä.
-**Tässä lihavaa tekstiä.**
-_Tässä taas kursivoitua tekstiä_
-Ja tässä taas tavallista tekstiä.
-
-#### Ja tietenkin hieman pienempi otsikko
+## Tehtävät
+### Viikko 1
+[gitlog.txt](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/laskarit/viikko1/gitlog.txt)  
+[komentorivi.txt](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/laskarit/viikko1/komentorivi.txt)
