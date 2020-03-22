@@ -20,6 +20,7 @@ public class MaksukorttiTest {
     
     @Test
     public void kortinSaldoOnAlussaOikea() {
+        assertEquals(10, kortti.saldo());
         assertEquals("saldo: 0.10", kortti.toString());
     }
     
@@ -27,6 +28,7 @@ public class MaksukorttiTest {
     public void kortinSaldoKasvaaOikeinRahaaLadatessa() {
         kortti.lataaRahaa(1440);
         
+        assertEquals(1450, kortti.saldo());
         assertEquals("saldo: 14.50", kortti.toString());
     }
     
@@ -34,6 +36,7 @@ public class MaksukorttiTest {
     public void saldoVaheneeOikeinKunSaldoRiittaa() {
         kortti.otaRahaa(10);
         
+        assertEquals(0, kortti.saldo());
         assertEquals("saldo: 0.0", kortti.toString());
     }
     
@@ -41,6 +44,7 @@ public class MaksukorttiTest {
     public void saldoEiVaheneKunSaldoEiRiita() {
         kortti.otaRahaa(20);
         
+        assertEquals(10, kortti.saldo());
         assertEquals("saldo: 0.10", kortti.toString());
     }
     
