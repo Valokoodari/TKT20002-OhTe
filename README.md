@@ -10,9 +10,9 @@
 mvn compile exec:java -Dexec.mainClass=gui.Main
 ```
 Joillakin koneilla ohjelman tyyli näkyy väärin ja kaikki on valkoista,
-mutta pyrin ratkaisemaan tämän bugin mahdollisimman nopeasti myös bugin
-kanssa toiminnallisuus on kuitenkin täysin sama vaikkakin valintoja ei
-näe ja exit-nappi näkyy vain hiiren ollessa sen päällä.
+mutta pyrin ratkaisemaan tämän bugin mahdollisimman nopeasti. Ohjelman
+toiminnallisuus bugin kanssa on kuitenkin täysin sama kuin ilmankin,
+vaikka valintoja ei näe ja exit-nappi näkyy vain hiiren ollessa sen päällä.
 
 ### Testaaminen
 ```
