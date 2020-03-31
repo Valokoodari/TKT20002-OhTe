@@ -4,10 +4,18 @@
 [Vaatimusmäärittely](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/vaatimusmaarittely.md)  
 [Työaikakirjanpito](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/tyoaikakirjanpito.md)
 
+## Komentorivitoiminnot
+### Ohjelman suorittaminen
+```
+mvn compile exec:java -Dexec.mainClass=gui.Main
+```
 
-## Tehtävät
-### Viikko 1
-[gitlog.txt](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/laskarit/viikko1/gitlog.txt)  
-[komentorivi.txt](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/laskarit/viikko1/komentorivi.txt)
-### Viikko 2
-[testikattavuus.jpg](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/laskarit/viikko2/testikattavuus.jpg)
+### Testaaminen
+```
+mvn test
+```
+### Testikattavuus
+```
+mvn test jacoco:report
+```
+Generoitunut testikattavuusraportti löytyy avaamalla selaimessa tiedosto target/site/jacoco/index.html
