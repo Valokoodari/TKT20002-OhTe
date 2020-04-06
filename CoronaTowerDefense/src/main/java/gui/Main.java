@@ -2,28 +2,50 @@ package gui;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
+import logic.Game;
 
 public class Main extends Application {
+	private int screenWidth;
+	private int screenHeight;
+	
     public static void main(String[] args) {
         launch(args);
     }
     
     public void start(Stage stage) {
-        stage.setTitle("Corona Tower Defense");
+    	stage.setTitle("Corona Tower Defense");
+    	
+    	// Force full screen and prevent escape
+    	stage.setFullScreen(true);
+    	stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
+    	
+    	// Measure the display
+    	Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+    	this.screenWidth = (int)screenBounds.getWidth();
+    	this.screenHeight = (int)screenBounds.getHeight();
 
-        Group menuRoot = new Group();
-        Scene menuScene = new Scene(menuRoot, 1920, 1080);
+    	// Menu GUI
+        Pane menuRoot = new Pane();
+        Scene menuScene = new Scene(menuRoot);
         stage.setScene(menuScene);
+        
+        Rectangle menuBg = new Rectangle(this.screenWidth, this.screenHeight, Color.SKYBLUE);
+        menuRoot.getChildren().add(menuBg);
         
         HBox startBox = new HBox();
         startBox.setLayoutY(300);
@@ -84,19 +106,19 @@ public class Main extends Application {
         
         // Map button actions
         map0.setOnAction(e -> {
-        	mapError.setText("Map map0 not implemented yet.");
         	RadioButton selectedButton = (RadioButton)diffGroup.getSelectedToggle();
-        	diffError.setText("Difficulty " + selectedButton.getText() + " not implemented yet.");
+        	String difficulty = selectedButton.getText();
+        	
+        	// This needs to be changed to be the other way around
+        	Game game = new Game(0, difficulty);
+        	GameGUI gameGui = new GameGUI(game, menuScene, stage);
+        	gameGui.setScene();
         });
         map1.setOnAction(e -> {
         	mapError.setText("Map map1 not implemented yet.");
-        	RadioButton selectedButton = (RadioButton)diffGroup.getSelectedToggle();
-        	diffError.setText("Difficulty " + selectedButton.getText() + " not implemented yet.");
         });
         map2.setOnAction(e -> {
         	mapError.setText("Map map2 not implemented yet.");
-        	RadioButton selectedButton = (RadioButton)diffGroup.getSelectedToggle();
-        	diffError.setText("Difficulty " + selectedButton.getText() + " not implemented yet.");
         });
         
         // Make the window visible
