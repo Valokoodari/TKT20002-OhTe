@@ -20,5 +20,5 @@ mvn test jacoco:report
 ```
 Generoitunut testikattavuusraportti löytyy avaamalla selaimessa tiedosto target/site/jacoco/index.html
 
-### Tunnetut bugit
+## Tunnetut bugit
 - Ohjelman napeista piirtyy joillakin järjestelmillä vain tekstit. Ei vaikutusta ohjelman toiminnallisuuteen.
