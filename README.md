@@ -18,7 +18,13 @@ mvn test
 ```
 mvn test jacoco:report
 ```
-Generoitunut testikattavuusraportti löytyy avaamalla selaimessa tiedosto target/site/jacoco/index.html
+Generoitunut testikattavuusraportti löytyy tiedostosta target/site/jacoco/index.html
+
+### Checkstyle
+```
+mvn jxr:jxr checkstyle:checkstyle
+```
+Generoitunut raportti löytyy tiedostosta target/site/checkstyle.html
 
 ## Tunnetut bugit
 - Ohjelman napeista piirtyy joillakin järjestelmillä vain tekstit. Ei vaikutusta ohjelman toiminnallisuuteen.

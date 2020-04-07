@@ -19,7 +19,7 @@ public class Tower0 {
         if (path < 0 || path >= this.upgrades.length) {
         	return;
         }
-        if (this.upgrades[path] < 4) {
+        if (this.upgrades[path] < 3) {
             this.upgrades[path]++;
         }
     }
@@ -31,5 +31,9 @@ public class Tower0 {
         double distance = Math.sqrt(dx2 + dy2);
         
         return distance <= range;
+    }
+    
+    public int[] getUpgrades() {
+    	return this.upgrades;
     }
 }

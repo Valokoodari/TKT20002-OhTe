@@ -24,4 +24,25 @@ public class Tower0Test {
         tower.upgrade(1);
         assertTrue(tower.inRange(6.32, 2.38));
     }
+    
+    @Test
+    public void invalidUpgradePathDoesNothing() {
+    	tower.upgrade(-1);
+    	assertArrayEquals(new int[]{0, 0}, tower.getUpgrades());
+    	tower.upgrade(2);
+    	assertArrayEquals(new int[]{0, 0}, tower.getUpgrades());
+    }
+    
+    @Test
+    public void UpgradesAreCappedAt3() {
+    	tower.upgrade(1);
+    	tower.upgrade(1);
+    	tower.upgrade(1);
+    	
+    	assertArrayEquals(new int[]{0, 3}, tower.getUpgrades());
+    	
+    	tower.upgrade(1);
+
+    	assertArrayEquals(new int[]{0, 3}, tower.getUpgrades());
+    }
 }
