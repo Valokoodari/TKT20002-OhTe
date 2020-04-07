@@ -36,8 +36,8 @@ public class Main extends Application {
     	
     	// Measure the display
     	Rectangle2D screenBounds = Screen.getPrimary().getBounds();
-    	this.screenWidth = (int)screenBounds.getWidth();
-    	this.screenHeight = (int)screenBounds.getHeight();
+    	this.screenWidth = (int) screenBounds.getWidth();
+    	this.screenHeight = (int) screenBounds.getHeight();
 
     	// Menu GUI
         Pane menuRoot = new Pane();
@@ -106,7 +106,7 @@ public class Main extends Application {
         
         // Map button actions
         map0.setOnAction(e -> {
-        	RadioButton selectedButton = (RadioButton)diffGroup.getSelectedToggle();
+        	RadioButton selectedButton = (RadioButton) diffGroup.getSelectedToggle();
         	String difficulty = selectedButton.getText();
         	
         	// This needs to be changed to be the other way around

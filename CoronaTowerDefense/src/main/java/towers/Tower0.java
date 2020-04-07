@@ -16,10 +16,12 @@ public class Tower0 {
     }
     
     public void upgrade(int path) {
-        if (path < 0 || path >= this.upgrades.length)
-            return;
-        if (this.upgrades[path] < 4)
+        if (path < 0 || path >= this.upgrades.length) {
+        	return;
+        }
+        if (this.upgrades[path] < 4) {
             this.upgrades[path]++;
+        }
     }
     
     public boolean inRange(double x, double y) {

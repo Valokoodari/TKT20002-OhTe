@@ -9,7 +9,7 @@ public class Game {
 		this.mapNumber = map;
 		
 		// Convert chosen difficulty from String to Integer
-		switch(difficulty) {
+		switch (difficulty) {
 			case "Easy":
 				this.difficulty = 0;
 				break;
@@ -26,7 +26,9 @@ public class Game {
 		
 		// Set health to 100, 50 or 1
 		this.health = 100 - this.difficulty * 50;
-		if (this.health <= 0) this.health = 1;
+		if (this.health <= 0) {
+			this.health = 1;
+		}
 	}
 	
 	public int getHealth() {
