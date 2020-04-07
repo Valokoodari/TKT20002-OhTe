@@ -9,30 +9,28 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import logic.Game;
 
 public class GameGUI {
 	private Text healthText;
 	private Text roundText;
+	private Game game;
 	private Scene menu;
 	private Stage stage;
 	
-	public GameGUI(Scene menuScene, Stage stage) {
+	public GameGUI(int map, String difficulty, Scene menuScene, Stage stage) {
 		this.menu = menuScene;
 		this.stage = stage;
-		this.healthText = new Text("Health: " + 0);
-		this.roundText = new Text("Round: 0/0");
+		
+		this.game = new Game(map, difficulty);
+		
+		this.healthText = new Text("Health: " + this.game.getHealth());
+		this.roundText = new Text("Round: " + this.game.getRound() + "/" + this.game.getLength());
 	}
 	
-	public void setHealth(int health) {
-		this.healthText.setText("Health: " + health); 
-	}
-	
-	public void setRound(int round, int maxRound) {
-		this.roundText.setText("Round: " + round + "/" + maxRound);
-	}
-	
-	public void setRoundFree(int round) {
-		this.roundText.setText("Round: " + round);
+	public void update() {
+		this.healthText.setText("Health: " + this.game.getHealth());
+		this.roundText.setText("Round: " + this.game.getRound() + "/" + this.game.getLength());
 	}
 	
 	public void setScene() {

@@ -109,8 +109,8 @@ public class Main extends Application {
         	RadioButton selectedButton = (RadioButton) diffGroup.getSelectedToggle();
         	String difficulty = selectedButton.getText();
         	
-        	GameGUI gameGui = new GameGUI(menuScene, stage);
-        	Game game = new Game(0, difficulty, gameGui);
+        	
+        	GameGUI gameGui = new GameGUI(0, difficulty, menuScene, stage);
         	gameGui.setScene();
         });
         map1.setOnAction(e -> {

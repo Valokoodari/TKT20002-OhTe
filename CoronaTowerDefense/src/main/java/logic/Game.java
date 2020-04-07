@@ -1,16 +1,13 @@
 package logic;
 
-import gui.GameGUI;
-
 public class Game {
 	private int health;
 	private int round;
 	private int finalRound;
 	private int difficulty;
 	private int mapNumber;
-	private GameGUI gui;
 	
-	public Game(int map, String difficulty, GameGUI gameGui) {
+	public Game(int map, String difficulty) {
 		this.mapNumber = map;
 		this.round = 1;
 		
@@ -25,14 +22,14 @@ public class Game {
 		
 		// Set final round to 20, 40, or 60
 		this.finalRound = 20 + this.difficulty * 20;
-		
-		this.gui = gameGui;
-		this.gui.setHealth(this.health);
-		this.gui.setRound(this.round, this.finalRound);
 	}
 	
 	public int getHealth() {
 		return this.health;
+	}
+	
+	public int getRound() {
+		return this.round;
 	}
 	
 	public int getLength() {
