@@ -1,11 +1,11 @@
 package towers;
 
-public class Tower0 {
+public class Tower {
     private double[] position;
     private int[] upgrades;
     private String name;
             
-    public Tower0(double x, double y) {
+    public Tower(double x, double y) {
         this.position = new double[2];
         this.position[0] = x;
         this.position[1] = y;

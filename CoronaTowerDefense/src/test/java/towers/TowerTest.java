@@ -4,12 +4,12 @@ import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.*;
 
-public class Tower0Test {
-    Tower0 tower;
+public class TowerTest {
+    Tower tower;
     
     @Before
     public void setUp() {
-        tower = new Tower0(4.0, 4.0);
+        tower = new Tower(4.0, 4.0);
     }
     
     @Test
