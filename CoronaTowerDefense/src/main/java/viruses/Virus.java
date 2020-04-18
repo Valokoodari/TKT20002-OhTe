@@ -34,28 +34,33 @@ public class Virus {
 	}
 	
 	public int update(double elapsedTime) {
-		if (this.health == 0) return 0;
+		if (this.health == 0) {
+			return 0;
+		}
 		if (this.pathPos + 1 == this.path.length) {
 			this.health = 0;
 			return this.damage;
 		}
 		
-		double moveX = this.path[this.pathPos+1][0] - this.position[0];
-		double moveY = this.path[this.pathPos+1][1] - this.position[1];
+		double moveX = this.path[this.pathPos + 1][0] - this.position[0];
+		double moveY = this.path[this.pathPos + 1][1] - this.position[1];
 		
-		if (Math.abs(moveX + moveY) < elapsedTime * this.speed) {
-			this.pathPos++;
-			
-			this.position = new double[] {this.path[this.pathPos][0], this.path[this.pathPos][1]};
-		}
-		
-		if (moveX != 0) {
-			this.position[0] += (Math.abs(moveX)/moveX) * this.speed * elapsedTime;
-		}
-		if (moveY != 0) {
-			this.position[1] += (Math.abs(moveY)/moveY) * this.speed * elapsedTime;
-		}
+		this.move(moveX, moveY, elapsedTime);
 		
 		return 0;
+	}
+
+	private void move(double moveX, double moveY, double elapsedTime) {
+		if (Math.abs(moveX + moveY) < elapsedTime * this.speed) {
+			this.pathPos++;
+			this.position = new double[] {this.path[this.pathPos][0], this.path[this.pathPos][1]};
+		}
+
+		if (moveX != 0) {
+			this.position[0] += (Math.abs(moveX) / moveX) * this.speed * elapsedTime;
+		}
+		if (moveY != 0) {
+			this.position[1] += (Math.abs(moveY) / moveY) * this.speed * elapsedTime;
+		}
 	}
 }

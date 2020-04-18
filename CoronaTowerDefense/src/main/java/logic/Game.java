@@ -37,8 +37,10 @@ public class Game {
 	}
 	
 	public int update(double elapsedTime) {
-		if (this.health <= 0) return 2;
-		
+		if (this.health <= 0) {
+			return 2;
+		}
+
 		for (int i = 0; i < this.viruses.length; i++) {
 			this.health -= this.viruses[i].update(elapsedTime);
 		}
