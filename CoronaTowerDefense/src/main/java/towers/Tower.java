@@ -25,12 +25,16 @@ public class Tower {
     }
     
     public boolean inRange(double x, double y) {
-        double range = 2.6 + this.upgrades[1] * 0.25;
+        double range = this.getRange();
         double dx2 = Math.pow(Math.abs(this.position[0] - x), 2);
         double dy2 = Math.pow(Math.abs(this.position[1] - y), 2);
         double distance = Math.sqrt(dx2 + dy2);
         
         return distance <= range;
+    }
+    
+    public double getRange() {
+    	return 2.6 + this.upgrades[1] * 0.25;
     }
     
     public int[] getUpgrades() {

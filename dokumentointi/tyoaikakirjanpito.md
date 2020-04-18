@@ -8,4 +8,9 @@
 |  5.4. | 1    | Grafiikkaongelman ratkomista              |
 |  6.4. | 1    | Pelilogiikan ja HUDin alku                |
 |  7.4. | 2    | Lisää testejä, korjauksia ja luokkakaavio |
-| yht.  | 9    |                                           |
+| 18.4. | 1    | Kartan piirtäminen                        |
+|       | 2    | Tornin ja etäisyyden piirtäminen kartalle |
+|       | 1    | Kartta tiedostosta ja reitin etsiminen    |
+|       | 1    | Ensimmäinen virus liikkeineen             |
+|       | 1    | Mahdollisuus pelissä häviämiseen          |
+| yht.  | 15   |                                           |

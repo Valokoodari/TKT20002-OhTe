@@ -7,17 +7,26 @@ Pelissä on mahdollista kerätä saavutuksia esimerkiksi pelaamalla kaikki tasot
 
 ## Alustavat ominaisuudet
 - [x] Päävalikosta voi aloittaa uuden pelin tai sulkea sovelluksen
-- [ ] Kolme erilaista kenttää
+- [x] Yksi kenttä ja valmiina napit useammalle
 - [x] Kolme vaikeustasoa jotka ovat valittavissa kaikilla kentillä
-- [ ] Edistyminen tallentuu automaattisesti
-- [ ] Saavutuksia merkittävistä onnistumisista pelissä
-- [ ] Kaksi hyökkäävää tornia ja kaksi avustavaa tornia
+- [ ] Hyökkäävä torni virusten vahingoittamiseen
 - [x] Pelin voi lopettaa kesken
 - [ ] Torneja on mahdollista parantaa
+- [x] Pelissä voi hävitä
+- [ ] Pelissä voi voittaa
+- [x] Peli piirtää kartan
+- [x] Peli piirtää tornit
+- [x] Peli piirtää virukset
+- [x] Kuvat päivittyy
+- [x] Virukset etenevät kentällä
+- [ ] Tornit voivat vahingoittaa viruksia
+- [x] Virukset voivat vahingoittaa pelaajaa 
 - [ ] Peliä voi oikeasti pelata
 
 ## Jatkokehitysideoita
 - [ ] Profiilin vaihtaminen useammalle käyttäjälle samalla laitteella
+- [ ] Edistyminen tallentuu automaattisesti
+- [ ] Saavutuksia merkittävistä onnistumisista pelissä
 - [ ] Lisää kenttiä
 - [ ] Lisää torneja
 - [ ] Lisää vaikeustasoja
