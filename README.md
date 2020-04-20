@@ -9,7 +9,13 @@
 [Viikko 5](https://github.com/Valokoodari/tkt-ohte-ht/releases/tag/v0.5.1)
 
 ## Komentorivitoiminnot
-### Ohjelman suorittaminen
+### Ohjelman pakkaaminen suoritettavaksi tiedostoksi
+```
+mvn package
+```
+Komento luo suoritettavan tiedoston target/CoronaTowerDefense-1.0-SNAPSHOT.jar
+
+### Ohjelman suorittaminen mavenilla
 ```
 mvn compile exec:java -Dexec.mainClass=gui.Main
 ```
