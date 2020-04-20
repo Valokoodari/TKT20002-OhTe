@@ -1,9 +1,9 @@
 package logic;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Map {
 	private int mapNumber;
@@ -30,21 +30,22 @@ public class Map {
 	
 	private void loadMap(int mapNumber) {
 		this.map = new int[24][32];
-		
+
 		try {
-			File mapFile = new File(getClass().getClassLoader().getResource("maps/" + mapNumber + ".map").getFile());
-			Scanner mapScanner = new Scanner(mapFile);
-			
-			for (int n = 0; mapScanner.hasNextLine(); n++) {
-				String line = mapScanner.nextLine();
-				
+			InputStream inputStream = getClass().getResourceAsStream("/maps/" + mapNumber + ".map");
+			BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+
+			String line;
+			int n = 0;
+			while ((line = reader.readLine()) != null) {
 				for (int i = 0; i < line.length(); i += 2) {
 					this.map[n][i / 2] = line.charAt(i) - '0';
 				}
+				n++;
 			}
 			
-			mapScanner.close();
-		} catch (FileNotFoundException e) {
+			reader.close();
+		} catch (Exception e) {
 			System.out.println("Resource " + mapNumber + ".map not found");
 		}
 	}
