@@ -5,6 +5,9 @@
 [Työaikakirjanpito](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/tyoaikakirjanpito.md)  
 [Arkkitehtuuri](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/arkkitehtuuri.md)  
 
+## Releaset
+[Viikko 5](https://github.com/Valokoodari/tkt-ohte-ht/releases/tag/v0.5.1)
+
 ## Komentorivitoiminnot
 ### Ohjelman suorittaminen
 ```
