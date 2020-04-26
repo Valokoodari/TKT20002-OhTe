@@ -9,18 +9,20 @@ Pelissä on mahdollista kerätä saavutuksia esimerkiksi pelaamalla kaikki tasot
 - [x] Päävalikosta voi aloittaa uuden pelin tai sulkea sovelluksen
 - [x] Yksi kenttä ja valmiina napit useammalle
 - [x] Kolme vaikeustasoa jotka ovat valittavissa kaikilla kentillä
-- [ ] Hyökkäävä torni virusten vahingoittamiseen
+- [x] Hyökkäävä torni virusten vahingoittamiseen
 - [x] Pelin voi lopettaa kesken
 - [ ] Torneja on mahdollista parantaa
 - [x] Pelissä voi hävitä
-- [ ] Pelissä voi voittaa
+- [x] Pelissä voi voittaa
 - [x] Peli piirtää kartan
 - [x] Peli piirtää tornit
 - [x] Peli piirtää virukset
 - [x] Kuvat päivittyy
 - [x] Virukset etenevät kentällä
-- [ ] Tornit voivat vahingoittaa viruksia
-- [x] Virukset voivat vahingoittaa pelaajaa 
+- [x] Tornit voivat vahingoittaa viruksia
+- [x] Virukset voivat vahingoittaa pelaajaa
+- [ ] Jokainen peli koostuu aalloista
+- [ ] Aallot sisältävät ennalta määritellyt virukset
 - [ ] Peliä voi oikeasti pelata
 
 ## Jatkokehitysideoita

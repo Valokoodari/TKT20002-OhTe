@@ -14,4 +14,5 @@
 |       | 1    | Ensimmäinen virus liikkeineen                        |
 |       | 1    | Mahdollisuus pelissä häviämiseen                     |
 | 20.4. | 2    | Korjattiin resurssien lukeminen pakatussa ohjelmassa |
-| yht.  | 17   |                                                      |
+| 26.4. | 1    | Virusten vahingoittaminen ja peli voittaminen        |
+| yht.  | 18   |                                                      |

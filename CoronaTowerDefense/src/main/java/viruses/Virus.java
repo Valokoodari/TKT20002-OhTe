@@ -32,11 +32,22 @@ public class Virus {
 	public int getHealth() {
 		return this.health;
 	}
+
+	public boolean alive() {
+		return this.health > 0;
+	}
+
+	public void takeDamage(int points) {
+		if (points > 0) {
+			this.health -= points;
+		}
+	}
 	
 	public int update(double elapsedTime) {
-		if (this.health == 0) {
+		if (this.health <= 0) {
 			return 0;
 		}
+
 		if (this.pathPos + 1 == this.path.length) {
 			this.health = 0;
 			return this.damage;
@@ -56,10 +67,10 @@ public class Virus {
 			this.position = new double[] {this.path[this.pathPos][0], this.path[this.pathPos][1]};
 		}
 
-		if (moveX != 0) {
+		if (Math.abs(moveX) > 1e-12) {
 			this.position[0] += (Math.abs(moveX) / moveX) * this.speed * elapsedTime;
 		}
-		if (moveY != 0) {
+		if (Math.abs(moveY) > 1e-12) {
 			this.position[1] += (Math.abs(moveY) / moveY) * this.speed * elapsedTime;
 		}
 	}

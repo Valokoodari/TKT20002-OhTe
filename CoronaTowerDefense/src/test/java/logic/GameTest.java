@@ -2,8 +2,6 @@ package logic;
 
 import org.junit.Test;
 
-import gui.GameGUI;
-
 import static org.junit.Assert.*;
 
 public class GameTest {

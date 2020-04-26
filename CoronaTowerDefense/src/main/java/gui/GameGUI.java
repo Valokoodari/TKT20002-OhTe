@@ -90,13 +90,15 @@ public class GameGUI {
 				}
 			}
 		}
-		
+
+		// Draw viruses
 		Virus[] viruses = this.game.getViruses();
 		gc.setFill(Color.YELLOW);
 		for (int i = 0; i < viruses.length; i++) {
-			if (viruses[i].getHealth() != 0) {
+			if (viruses[i].alive()) {
 				double[] pos = viruses[i].getPos();
 				gc.fillOval(tileSize*(pos[0]+0.4), tileSize*(pos[1]+0.4), tileSize*0.2, tileSize*0.2);
+				gc.fillText("" + viruses[i].getHealth(), tileSize*(pos[0]+0.4), tileSize*pos[1]);
 			}
 		}
 	}

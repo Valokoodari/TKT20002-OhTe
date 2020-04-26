@@ -1,28 +1,32 @@
 package towers;
 
+import viruses.Virus;
 import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.*;
 
 public class TowerTest {
     Tower tower;
+    int[][] path;
     
     @Before
     public void setUp() {
         tower = new Tower(4.0, 4.0);
+        path = new int[1][2];
+        path[0] = new int[]{0,0};
     }
     
     @Test
     public void inRangeWorksWithoutUpgrades() {
-        assertTrue(tower.inRange(4.0, 1.4));
-        assertFalse(tower.inRange(4.0, 1.3));
+        assertTrue(tower.inRange(new Virus(4.0, 1.4, path)));
+        assertFalse(tower.inRange(new Virus(4.0, 1.3, path)));
     }
     
     @Test
     public void rangeIsIncreasedProperly() {
-        assertFalse(tower.inRange(6.32, 2.38));
+        assertFalse(tower.inRange(new Virus(6.32, 2.38, path)));
         tower.upgrade(1);
-        assertTrue(tower.inRange(6.32, 2.38));
+        assertTrue(tower.inRange(new Virus(6.32, 2.38, path)));
     }
     
     @Test

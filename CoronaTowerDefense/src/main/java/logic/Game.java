@@ -41,11 +41,23 @@ public class Game {
 			return 2;
 		}
 
+		for (int i = 0; i < this.towers.length; i++) {
+			for (int j = 0; j < this.towers[i].length; j++) {
+				if (this.towers[i][j] != null) {
+					this.towers[i][j].attack(this.viruses, elapsedTime);
+				}
+			}
+		}
+
+		boolean win = true;
 		for (int i = 0; i < this.viruses.length; i++) {
+			if (this.viruses[i].alive()) {
+				win = false;
+			}
 			this.health -= this.viruses[i].update(elapsedTime);
 		}
-		
-		return 0;
+
+		return (win) ? 1 : 0;
 	}
 	
 	public int getMoney() {
