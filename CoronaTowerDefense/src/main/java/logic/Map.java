@@ -12,6 +12,12 @@ public class Map {
 	private int[] endPos;
 	private int[][] path;
 	
+	/**
+	 * Luo uuden kartta-olion, lataa valitun kartan tiedostosta
+	 * ja etsii ladatusta kartasta polun viruksia varten.
+	 * 
+	 * @param mapNumber  Ladattavan kartan nimi
+	 */
 	public Map(int mapNumber) {
 		this.mapNumber = mapNumber;
 		
@@ -28,6 +34,11 @@ public class Map {
 		return this.path;
 	}
 	
+	/**
+	 * Lataa resursseissa olevista tiedostoista oikean kartan ohjelman muistiin.
+	 * 
+	 * @param mapNumber  ladattavan kartan numero
+	 */
 	private void loadMap(int mapNumber) {
 		this.map = new int[24][32];
 
@@ -50,6 +61,9 @@ public class Map {
 		}
 	}
 
+	/**
+	 * Etsii nykyisestä kartasta polun alku- ja loppupisteet
+	 */
 	private void findStartAndEndPositions() {
 		for (int i = 0; i < this.map.length; i++) {
 			for (int j = 0; j < this.map[i].length; j++) {
@@ -62,6 +76,9 @@ public class Map {
 		}
 	}
 	
+	/**
+	 * Etsii kartasta alku- ja loppupisteiden välisen polun
+	 */
 	private void findPath() {
 		int[][] path = new int[1000][2];
 		int length = 1;
@@ -83,6 +100,15 @@ public class Map {
 		}
 	}
 
+	/**
+	 * Etsii polulle seuraavan pisteen kartalta
+	 * 
+	 * @param dir  Edellinen kuljettu suunta
+	 * @param current  Nykyinen sijainti kartalla
+	 * @param path  Tähän mennessä löydetty polku
+	 * @param length  Polun pituus tähän mennessä
+	 * @return  Suunta johon päädyttiin kulkemaan
+	 */
 	private int findNextStep(int dir, int[] current, int[][] path, int length) {
 		if (current[0] != 0 && this.map[current[1]][current[0] - 1] != 0 && dir != 2) {
 			path[length] = new int[] {current[0] - 1, current[1]};
