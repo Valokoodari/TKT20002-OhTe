@@ -30,6 +30,15 @@ public class GameGUI {
 	private Canvas mapCanvas;
 	private AnimationTimer animationTimer;
 	
+	/**
+	 * Luo uuden graafisen käyttöliittymän ja liittää siihen pelin päälogiikan halutuilla ominaisuuksilla
+	 * 
+	 * @param mapNumber  Valitun kartan numero
+	 * @param difficulty  Valitun vaikeustason nimi
+	 * @param menuScene  Scene johon palataan pelin loputtua
+	 * @param stage  Stage johon Scene asetetaan
+	 * @param display  Nykyisen näytön ominaisuudet
+	 */
 	public GameGUI(int mapNumber, String difficulty, Scene menuScene, Stage stage, Display display) {
 		this.menuScene = menuScene;
 		this.stage = stage;
@@ -47,6 +56,11 @@ public class GameGUI {
 		this.roundText = new Text("Round: " + this.game.getRound() + "/" + this.game.getLength());
 	}
 	
+	/**
+	 * Käyttöliittymän päivitys, joka kutsuu myös päälogiikan päivitystä
+	 * 
+	 * @param elapsedTime  edellisestä kutsusta kulunut aika
+	 */
 	public void update(double elapsedTime) {
 		// Run game updates
 		int status = this.game.update(elapsedTime);
@@ -120,6 +134,9 @@ public class GameGUI {
 		this.animationTimer.start();
 	}
 	
+	/**
+	 * Asettaa näkymäksi pelinäkymän ja piilottaa päävalikon pelin ajaksi
+	 */
 	public void setScene() {
 		Group gameRoot = new Group();
 		Scene gameScene = new Scene(gameRoot);
@@ -153,6 +170,13 @@ public class GameGUI {
     	this.stage.setFullScreen(true);
 	}
 	
+	/**
+	 * Kutsuu pelilogiikkaa karttaa klikatessa ja antaa
+	 * tälle kartan koordinaateiksi muunnetut koordinaatit
+	 * 
+	 * @param x  Klikkauksen x-koordinaatti pikseleissä
+	 * @param y  Klikkauksen y-koordinaatti pikseleissä
+	 */
 	public void handleMapClick(int x, int y) {
 		x /= this.tileSize;
 		y /= this.tileSize;
@@ -160,6 +184,9 @@ public class GameGUI {
 		this.game.click(x, y);
 	}
 
+	/**
+	 * Muuttaa vaikeustason nimen vaikeustason numeroksi
+	 */
 	private int convertDifficulty(String difficulty) {
 		switch (difficulty) {
 			case "Easy":
