@@ -5,8 +5,6 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -21,6 +19,7 @@ import viruses.Virus;
 
 public class GameGUI {
 	private Text healthText;
+	private Text moneyText;
 	private Text roundText;
 	private Game game;
 	private Scene menuScene;
@@ -36,7 +35,7 @@ public class GameGUI {
 		this.stage = stage;
 		this.display = display;
 		
-		this.game = new Game(mapNumber, difficulty);
+		this.game = new Game(mapNumber, this.convertDifficulty(difficulty));
 		
 		int[][] map = this.game.getMap();
 		this.tileSize = this.display.height / map.length;
@@ -44,6 +43,7 @@ public class GameGUI {
 		this.mapCanvas.setOnMouseClicked(e -> this.handleMapClick((int)e.getScreenX(), (int)e.getScreenY()));
 		
 		this.healthText = new Text("Health: " + this.game.getHealth());
+		this.moneyText = new Text("Money: " + this.game.getMoney() + " Ð");
 		this.roundText = new Text("Round: " + this.game.getRound() + "/" + this.game.getLength());
 	}
 	
@@ -60,6 +60,7 @@ public class GameGUI {
 		
 		// Update HUD
 		this.healthText.setText("Health: " + this.game.getHealth());
+		this.moneyText.setText("Money: " + this.game.getMoney() + " Ð");
 		this.roundText.setText("Round: " + this.game.getRound() + "/" + this.game.getLength());
 		
 		// Draw map
@@ -134,18 +135,19 @@ public class GameGUI {
 		HBox top = new HBox();
 		gameRoot.getChildren().add(top);
 		
-		VBox hud = new VBox();
-		top.getChildren().add(hud);
-		hud.getChildren().add(this.healthText);
-		hud.getChildren().add(this.roundText);
-		
-		Button menuButton = new Button("<-");
-		top.getChildren().add(menuButton);
+		Button menuButton = new Button("<- Back");
 		menuButton.setOnAction(e -> {
 			this.stage.setScene(this.menuScene);
 			this.stage.setFullScreen(true);
 		});
 		top.setLayoutX(this.game.getMap()[0].length * this.tileSize + 10);
+
+		VBox hud = new VBox();
+		top.getChildren().add(hud);
+		hud.getChildren().add(menuButton);
+		hud.getChildren().add(this.healthText);
+		hud.getChildren().add(this.moneyText);
+		hud.getChildren().add(this.roundText);
 		
     	this.stage.setScene(gameScene);
     	this.stage.setFullScreen(true);
@@ -155,6 +157,19 @@ public class GameGUI {
 		x /= this.tileSize;
 		y /= this.tileSize;
 		
-		this.game.addTower(x, y);
+		this.game.click(x, y);
+	}
+
+	private int convertDifficulty(String difficulty) {
+		switch (difficulty) {
+			case "Easy":
+				return 0;
+			case "Medium":
+				return 1;
+			case "Hard":
+				return 2;
+			default:
+				return 1;
+		}
 	}
 }

@@ -2,47 +2,82 @@ package logic;
 
 import org.junit.Test;
 
+import towers.Tower;
+
 import static org.junit.Assert.*;
 
+import org.junit.Before;
+
 public class GameTest {
+	Game game;
+
+	@Before
+	public void Before() {
+		game = new Game(0, 0);
+	}
+
     @Test
     public void correctStartValuesEasy() {
-    	Game game = new Game(0, "Easy");
-    	
     	assertEquals(20, game.getLength());
     	assertEquals(100, game.getHealth());
-    	assertEquals(0, game.getDifficulty());
     }
     
     @Test
     public void correctStartValuesMedium() {
-    	Game game = new Game(0, "Medium");
+    	Game mediumGame = new Game(0, 1);
     	
-    	assertEquals(40, game.getLength());
-    	assertEquals(50, game.getHealth());
-    	assertEquals(1, game.getDifficulty());
+    	assertEquals(40, mediumGame.getLength());
+    	assertEquals(50, mediumGame.getHealth());
     }
     
     @Test
     public void correctStartValuesHard() {
-    	Game game = new Game(0, "Hard");
+    	Game hardGame = new Game(0, 2);
     	
-    	assertEquals(60, game.getLength());
-    	assertEquals(1, game.getHealth());
-    	assertEquals(2, game.getDifficulty());
-    }
-    
-    @Test
-    public void invalidDifficultyDefaultsToMedium() {
-    	Game game = new Game(0, "ASDF");
-    	
-    	assertEquals(1, game.getDifficulty());
+    	assertEquals(60, hardGame.getLength());
+    	assertEquals(1, hardGame.getHealth());
     }
     
     @Test
     public void startingRoundIs1() {
-    	Game game = new Game(0, "Easy");
-    	
     	assertEquals(1, game.getRound());
-    }
+	}
+
+	@Test
+	public void gameStartWithoutTowers() {
+		assertEquals(0, countTowers(game.getTowers()));
+	}
+	
+	@Test
+	public void towerCanBePlacedOnEmptyTile() {
+		assertEquals(0, countTowers(game.getTowers()));
+		game.click(0, 0);
+		assertEquals(1, countTowers(game.getTowers()));
+	}
+
+	@Test
+	public void towersCannotBePlacedOnPathTile() {
+		assertEquals(0, countTowers(game.getTowers()));
+		game.click(0, 2);
+		assertEquals(0, countTowers(game.getTowers()));
+	}
+
+	@Test
+	public void gameCanBeLost() {
+		boolean lost = false;
+		for (int i = 0; i < 1000 && !lost; i++)
+			if (game.update(2.0) == 2) lost = true;
+
+		assertTrue(lost);
+	}
+
+	private int countTowers(Tower[][] towers) {
+		int count = 0;
+
+		for (int i = 0; i < towers.length; i++)
+			for (int j = 0; j < towers[i].length; j++)
+				if (towers[i][j] != null) count++;
+
+		return count;
+	}
 }

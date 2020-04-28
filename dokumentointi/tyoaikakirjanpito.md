@@ -15,4 +15,5 @@
 |       | 1    | Mahdollisuus pelissä häviämiseen                     |
 | 20.4. | 2    | Korjattiin resurssien lukeminen pakatussa ohjelmassa |
 | 26.4. | 1    | Virusten vahingoittaminen ja peli voittaminen        |
-| yht.  | 18   |                                                      |
+| 28.4. | 1    | Rahajärjestelmä ja lisää testejä                     |
+| yht.  | 19   |                                                      |
