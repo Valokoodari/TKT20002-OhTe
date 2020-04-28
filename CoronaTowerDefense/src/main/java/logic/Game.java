@@ -14,6 +14,12 @@ public class Game {
 	private Tower[][] towers;
 	private Virus[] viruses;
 	
+	/**
+	 * Luo uuden pelin annetun kartan ja vaikeustason mukaisilla alkuarvoilla
+	 * 
+	 * @param mapNumber  Valitun kartan numero
+	 * @param difficulty  Valitun vaikeustason numero
+	 */
 	public Game(int mapNumber, int difficulty) {
 		this.map = new Map(mapNumber);
 		this.difficulty = difficulty;
@@ -38,6 +44,13 @@ public class Game {
 		this.viruses[1] = new Virus(-1, 2, this.map.getPath());
 	}
 	
+	/**
+	 * Suorittaa pelin tärkeät laskutoimitukset annetun kuluneen ajan mukaisesti.
+	 * Esimerkiksi tornit ja virukset käydään läpi ja tarkistetaan pelin tila.
+	 * 
+	 * @param elapsedTime edellisestä kutsusta kulunut aika sekunteina
+	 * @return normaali 0, voitto 1, häviö 2
+	 */
 	public int update(double elapsedTime) {
 		if (this.health <= 0) {
 			return 2;
@@ -49,6 +62,11 @@ public class Game {
 		return (win) ? 1 : 0;
 	}
 
+	/**
+	 * Käsketään yksittäisiä torneja päivittämään tilansa ja hyökkäämään
+	 * 
+	 * @param elapsedTime edellisestä kutsusta kulunut aika
+	 */
 	private void updateTowers(double elapsedTime) {
 		for (int i = 0; i < this.towers.length; i++) {
 			for (int j = 0; j < this.towers[i].length; j++) {
@@ -59,6 +77,12 @@ public class Game {
 		}
 	}
 
+	/**
+	 * Käsketään viruksia tarkistamaan tilansa ja liikkumaan
+	 * 
+	 * @param elapsedTime edellisestä kutsusta kulunut aika
+	 * @return tosi jos viruksia ei ole enää elossa
+	 */
 	private boolean updateViruses(double elapsedTime) {
 		boolean win = true;
 		int dead = 0;
@@ -104,6 +128,13 @@ public class Game {
 		return this.viruses;
 	}
 	
+	/**
+	 * Käsittelee klikkauksen jossakin kohtaa karttaa.
+	 * Useimmiten lisää uuden tornin tai päivittää olemassa olevaa tornia.
+	 * 
+	 * @param x  klikkauksen x-koordinaatti
+	 * @param y  klikkauksen y-koordinaatti
+	 */
 	public void click(int x, int y) {
 		int towerPrice = 100 + this.difficulty * 50;
 
