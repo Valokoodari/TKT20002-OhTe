@@ -16,4 +16,6 @@
 | 20.4. | 2    | Korjattiin resurssien lukeminen pakatussa ohjelmassa |
 | 26.4. | 1    | Virusten vahingoittaminen ja peli voittaminen        |
 | 28.4. | 1    | Rahajärjestelmä ja lisää testejä                     |
-| yht.  | 19   |                                                      |
+|       | 1    | Javadocin käyttöönotto ja kirjoittaminen             |
+|       | 1    | Alustava käyttöohje pelin pelaamiseen                |
+| yht.  | 20   |                                                      |
