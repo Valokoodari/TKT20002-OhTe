@@ -7,6 +7,12 @@ public class Tower {
 	private double[] position;
 	private int[] upgrades;
 
+	/**
+	 * Luo uuden tornin annettuun sijaintiin
+	 * 
+	 * @param x  tornin sijainnin x-koordinaatti
+	 * @param y  tornin sijainnin y-koordinaatti
+	 */
 	public Tower(double x, double y) {
 		this.position = new double[2];
 		this.position[0] = x;
@@ -17,6 +23,11 @@ public class Tower {
 		this.cooldown = 0;
 	}
 
+	/**
+	 * Päivittää tornia yhden pykälän annetulla päivityspolulla.
+	 * 
+	 * @param path  päivitettävän polun indeksi
+	 */
 	public void upgrade(int path) {
 		if (path < 0 || path >= this.upgrades.length) {
 			return;
@@ -26,6 +37,14 @@ public class Tower {
 		}
 	}
 
+	/**
+	 * Torni hyökkää annetulla listalla olevia viruksia kohtaan,
+	 * jos virukset ovat riittävän lähellä tornia ja tornin
+	 * edellisestä hyökkäyksestä on kulunut riittävästi aikaa.
+	 * 
+	 * @param viruses  lista viruksista
+	 * @param elapsedTime  edellisestä kutsusta kulunut aika
+	 */
 	public void attack(Virus[] viruses, double elapsedTime) {
 		this.cooldown -= elapsedTime;
 		if (this.cooldown <= 0) {
@@ -38,6 +57,12 @@ public class Tower {
 		}
 	}
 
+	/**
+	 * Tarkistaa onko pyydetty virus tornin näköetäisyydellä
+	 * 
+	 * @param virus  Tarkistettava virus
+	 * @return tosi, jos torni näkee viruksen
+	 */
 	public boolean inRange(Virus virus) {
 		double range = this.getRange();
 		double dx2 = Math.pow(Math.abs(this.position[0] - virus.getPos()[0]), 2);
