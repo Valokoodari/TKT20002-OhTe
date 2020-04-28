@@ -36,6 +36,12 @@ mvn jxr:jxr checkstyle:checkstyle
 ```
 Generoitunut raportti löytyy tiedostosta target/site/checkstyle.html
 
+### Javadoc
+```
+mvn javadoc:javadoc
+```
+Generoitua dokumentaatiota pääsee selaamaan avaamalla selaimessa target/site/apidocs/index.html
+
 ## Tunnetut bugit
 - Ohjelman napeista piirtyy joillakin järjestelmillä vain tekstit. Ei vaikutusta ohjelman toiminnallisuuteen.
 - Pelin päävalikko ei näy oikein alussa. Korjaantuu aloittamalla pelin ja palaamalla.
