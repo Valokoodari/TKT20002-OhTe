@@ -9,6 +9,13 @@ public class Virus {
 	private int[][] path;
 	private int pathPos;
 	
+	/**
+	 * Luo uuden viruksen annettuun sijaintiin seuraamaan annettua reittiä
+	 * 
+	 * @param startX  Aloitussijainnin x-koordinaatti
+	 * @param startY  Aloitussijainnin y-koordinaatti
+	 * @param path    Viruksen kulkeman reitin pisteet
+	 */
 	public Virus(double startX, double startY, int[][] path) {
 		this.name = "SARS-CoV-2";
 		
@@ -33,16 +40,32 @@ public class Virus {
 		return this.health;
 	}
 
+	/**
+	 * Kertoo onko virus vielä olemassa
+	 * 
+	 * @return viruksen tila
+	 */
 	public boolean alive() {
 		return this.health > 0;
 	}
 
+	/**
+	 * Saa viruksen ottamaan jonkin positiivisen kokonaisluvun verran vahinkoa
+	 * 
+	 * @param  points  viruksen ottaman vahingon suuruus
+	 */
 	public void takeDamage(int points) {
 		if (points > 0) {
 			this.health -= points;
 		}
 	}
 	
+	/**
+	 * Saa viruksen tarkistamaan oman tilansa sekä liikkumaan tarvittavan määrän.
+	 * 
+	 * @param elapsedTime  edellisestä päivityksestä kulunut aika sekunteina
+	 * @return viruksen pelaajalle aiheuttama vahinko, jos polun loppu on saavutettu
+	 */
 	public int update(double elapsedTime) {
 		if (this.health <= 0) {
 			return 0;
@@ -61,6 +84,13 @@ public class Virus {
 		return 0;
 	}
 
+	/**
+	 * Liikuttaa virusta kuluneen ajan ja polun seuraavan pisteen mukaisesti.
+	 * 
+	 * @param moveX  Etäisyys seuraavaan pisteeseen x-akselilla
+	 * @param moveY  Etäisyys seuraavaan pisteeseen y-akselilla
+	 * @param elapsedTime  Edellisestä kerrasta kulunut aika sekunteina
+	 */
 	private void move(double moveX, double moveY, double elapsedTime) {
 		if (Math.abs(moveX + moveY) < elapsedTime * this.speed) {
 			this.pathPos++;
