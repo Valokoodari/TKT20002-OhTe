@@ -1,13 +1,12 @@
 package logic;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.Arrays;
+import dao.MapDao;
+//import dao.VirusDao;
 
 public class Map {
-	private int mapNumber;
 	private int[][] map;
+	//private Viruses[][];
 	private int[] startPos;
 	private int[] endPos;
 	private int[][] path;
@@ -19,9 +18,9 @@ public class Map {
 	 * @param mapNumber  Ladattavan kartan nimi
 	 */
 	public Map(int mapNumber) {
-		this.mapNumber = mapNumber;
-		
-		this.loadMap(this.mapNumber);
+		this.map = new MapDao().loadMap(mapNumber);
+		//this.viruses = new VirusDao().loadViruses(mapNumber);
+
 		this.findStartAndEndPositions();
 		this.findPath();
 	}
@@ -32,33 +31,6 @@ public class Map {
 	
 	public int[][] getPath() {
 		return this.path;
-	}
-	
-	/**
-	 * Lataa resursseissa olevista tiedostoista oikean kartan ohjelman muistiin.
-	 * 
-	 * @param mapNumber  ladattavan kartan numero
-	 */
-	private void loadMap(int mapNumber) {
-		this.map = new int[24][32];
-
-		try {
-			InputStream inputStream = getClass().getResourceAsStream("/maps/" + mapNumber + ".map");
-			BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-
-			String line;
-			int n = 0;
-			while ((line = reader.readLine()) != null) {
-				for (int i = 0; i < line.length(); i += 2) {
-					this.map[n][i / 2] = line.charAt(i) - '0';
-				}
-				n++;
-			}
-			
-			reader.close();
-		} catch (Exception e) {
-			System.out.println("Resource " + mapNumber + ".map not found");
-		}
 	}
 
 	/**

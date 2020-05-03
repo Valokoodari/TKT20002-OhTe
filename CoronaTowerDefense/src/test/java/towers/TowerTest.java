@@ -18,15 +18,15 @@ public class TowerTest {
     
     @Test
     public void inRangeWorksWithoutUpgrades() {
-        assertTrue(tower.inRange(new Virus(4.0, 1.4, path)));
-        assertFalse(tower.inRange(new Virus(4.0, 1.3, path)));
+        assertTrue(tower.inRange(new Virus(4.0, 1.4, 10, path)));
+        assertFalse(tower.inRange(new Virus(4.0, 1.3, 10, path)));
     }
     
     @Test
     public void rangeIsIncreasedProperly() {
-        assertFalse(tower.inRange(new Virus(6.32, 2.38, path)));
+        assertFalse(tower.inRange(new Virus(6.32, 2.38, 10, path)));
         tower.upgrade(1);
-        assertTrue(tower.inRange(new Virus(6.32, 2.38, path)));
+        assertTrue(tower.inRange(new Virus(6.32, 2.38, 10, path)));
     }
     
     @Test

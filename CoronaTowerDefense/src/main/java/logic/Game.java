@@ -34,14 +34,14 @@ public class Game {
 			this.health = 1;
 		}
 		
-		// Set final round to 20, 40, or 60
-		this.finalRound = 20 + this.difficulty * 20;
+		// Set final round to 10, 20, or 40
+		this.finalRound = 10 * (int) Math.pow(2, difficulty);
 		
 		this.towers = new Tower[this.getMap().length][this.getMap()[0].length];
 		
 		this.viruses = new Virus[2];
-		this.viruses[0] = new Virus(0, 2, this.map.getPath());
-		this.viruses[1] = new Virus(-1, 2, this.map.getPath());
+		this.viruses[0] = new Virus(0, 2, 500, this.map.getPath());
+		this.viruses[1] = new Virus(-1, 2, 500, this.map.getPath());
 	}
 	
 	/**

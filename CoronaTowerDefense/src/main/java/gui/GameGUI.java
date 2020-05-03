@@ -77,23 +77,30 @@ public class GameGUI {
 		this.moneyText.setText("Money: " + this.game.getMoney() + " Ð");
 		this.roundText.setText("Round: " + this.game.getRound() + "/" + this.game.getLength());
 		
-		// Draw map
+		// Update graphics
 		GraphicsContext gc = this.mapCanvas.getGraphicsContext2D();
 		gc.setLineWidth(1);
 		
+		drawMap(gc);
+		drawTowers(gc);
+		drawViruses(gc);
+	}
+
+	private void drawMap(GraphicsContext gc) {
 		int[][] map = this.game.getMap();
-		Tower[][] towers = this.game.getTowers();
-		
-		// Draw map
+
 		for (int i = 0; i < map.length; i++) {
 			for (int j = 0; j < map[i].length; j++) {
 				gc.setFill((map[i][j] != 0)? Color.RED : Color.DARKRED);
 				gc.fillRect(tileSize*j, tileSize*i, tileSize, tileSize);
-				
 			}
 		}
-		
-		// Draw towers
+	}
+
+	private void drawTowers(GraphicsContext gc) {
+		Tower[][] towers = this.game.getTowers();
+		int[][] map = this.game.getMap();
+
 		for (int i = 0; i < map.length; i++) {
 			for (int j = 0; j < map[i].length; j++) {
 				if (towers[i][j] != null) {
@@ -105,9 +112,11 @@ public class GameGUI {
 				}
 			}
 		}
+	}
 
-		// Draw viruses
+	private void drawViruses(GraphicsContext gc) {
 		Virus[] viruses = this.game.getViruses();
+		
 		gc.setFill(Color.YELLOW);
 		for (int i = 0; i < viruses.length; i++) {
 			if (viruses[i].alive()) {
@@ -125,10 +134,12 @@ public class GameGUI {
 			
 			public void handle(long currentNanoTime) {
 				if (this.previousNanoTime < 0) this.previousNanoTime = currentNanoTime;
-				double elapsedNanoTime = (currentNanoTime - this.previousNanoTime) / 1e9;
+				double elapsedTime = (currentNanoTime - this.previousNanoTime) / 1e9;
 				this.previousNanoTime = currentNanoTime;
-				
-				update(elapsedNanoTime);
+
+				elapsedTime = Math.min(elapsedTime, 1.0/60);
+
+				update(elapsedTime);
 			}
 		};
 		this.animationTimer.start();

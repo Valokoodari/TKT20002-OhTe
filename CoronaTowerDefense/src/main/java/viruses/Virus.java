@@ -16,11 +16,11 @@ public class Virus {
 	 * @param startY  Aloitussijainnin y-koordinaatti
 	 * @param path    Viruksen kulkeman reitin pisteet
 	 */
-	public Virus(double startX, double startY, int[][] path) {
+	public Virus(double startX, double startY, int health, int[][] path) {
 		this.name = "SARS-CoV-2";
 		
-		this.damage = 50;
-		this.health = 10;
+		this.damage = (int) Math.ceil(health / 10.0);
+		this.health = health;
 		this.speed = 2.0;
 		
 		this.position = new double[]{startX, startY};
