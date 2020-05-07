@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class MapDao {
-    /**
+	/**
 	 * Lataa resursseissa olevista tiedostoista oikean kartan ohjelman muistiin.
 	 * 
 	 * @param mapNumber  ladattavan kartan numero
@@ -29,8 +29,8 @@ public class MapDao {
 			reader.close();
 		} catch (Exception e) {
 			System.out.println("Resource " + mapNumber + ".map not found");
-        }
-        
-        return map;
+		}
+		
+		return map;
 	}
 }

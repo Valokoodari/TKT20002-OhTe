@@ -1,5 +1,6 @@
 package logic;
 
+import dao.VirusDao;
 import towers.Tower;
 import viruses.Virus;
 
@@ -12,6 +13,7 @@ public class Game {
 	private int killed;
 	private Map map;
 	private Tower[][] towers;
+	private Virus[][] allViruses;
 	private Virus[] viruses;
 	
 	/**
@@ -39,9 +41,22 @@ public class Game {
 		
 		this.towers = new Tower[this.getMap().length][this.getMap()[0].length];
 		
-		this.viruses = new Virus[2];
-		this.viruses[0] = new Virus(0, 2, 500, this.map.getPath());
-		this.viruses[1] = new Virus(-1, 2, 500, this.map.getPath());
+		this.allViruses = new VirusDao().loadViruses(mapNumber, this.map.getPath());
+		this.setViruses();
+	}
+
+	private void setViruses() {
+		int size = 0;
+		for (int i = 0; i < this.allViruses[this.round - 1].length; i++) {
+			if (this.allViruses[this.round - 1][i] != null) {
+				size++;
+			}
+		}
+
+		this.viruses = new Virus[size];
+		for (int i = 0; i < size; i++) {
+			this.viruses[i] = this.allViruses[this.round - 1][i];
+		}
 	}
 	
 	/**
@@ -58,6 +73,13 @@ public class Game {
 
 		this.updateTowers(elapsedTime);
 		boolean win = this.updateViruses(elapsedTime);
+
+		if (win && this.round != this.finalRound) {
+			win = false;
+
+			this.round++;
+			this.setViruses();
+		}
 
 		return (win) ? 1 : 0;
 	}
@@ -88,9 +110,11 @@ public class Game {
 		int dead = 0;
 		for (int i = 0; i < this.viruses.length; i++) {
 			if (this.viruses[i].alive()) {
-				dead++;
 				win = false;
+			} else {
+				dead++;
 			}
+			
 			this.health -= this.viruses[i].update(elapsedTime);
 		}
 
