@@ -78,6 +78,7 @@ public class Game {
 			win = false;
 
 			this.round++;
+			this.killed = 0;
 			this.setViruses();
 		}
 
@@ -162,10 +163,14 @@ public class Game {
 	public void click(int x, int y) {
 		int towerPrice = 100 + this.difficulty * 50;
 
-		if (this.map.getMap()[y][x] == 0 && this.towers[y][x] == null) {
-			if (this.money >= towerPrice) {
-				this.towers[y][x] = new Tower(x, y);
-				this.money -= towerPrice;
+		if (this.map.getMap()[y][x] == 0) {
+			if (this.towers[y][x] == null) {
+				if (this.money >= towerPrice) {
+					this.towers[y][x] = new Tower(x, y);
+					this.money -= towerPrice;
+				}
+			} else {
+				this.towers[y][x].upgrade(1);
 			}
 		}
 	}

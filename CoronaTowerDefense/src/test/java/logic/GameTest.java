@@ -18,7 +18,7 @@ public class GameTest {
 
     @Test
     public void correctStartValuesEasy() {
-    	assertEquals(20, game.getLength());
+    	assertEquals(10, game.getLength());
     	assertEquals(100, game.getHealth());
     }
     
@@ -26,7 +26,7 @@ public class GameTest {
     public void correctStartValuesMedium() {
     	Game mediumGame = new Game(0, 1);
     	
-    	assertEquals(40, mediumGame.getLength());
+    	assertEquals(20, mediumGame.getLength());
     	assertEquals(50, mediumGame.getHealth());
     }
     
@@ -34,7 +34,7 @@ public class GameTest {
     public void correctStartValuesHard() {
     	Game hardGame = new Game(0, 2);
     	
-    	assertEquals(60, hardGame.getLength());
+    	assertEquals(40, hardGame.getLength());
     	assertEquals(1, hardGame.getHealth());
     }
     
@@ -65,7 +65,7 @@ public class GameTest {
 	@Test
 	public void gameCanBeLost() {
 		boolean lost = false;
-		for (int i = 0; i < 1000 && !lost; i++)
+		for (int i = 0; i < 10000 && !lost; i++)
 			if (game.update(2.0) == 2) lost = true;
 
 		assertTrue(lost);

@@ -41,6 +41,7 @@ public class Tower {
 	 * Torni hyökkää annetulla listalla olevia viruksia kohtaan,
 	 * jos virukset ovat riittävän lähellä tornia ja tornin
 	 * edellisestä hyökkäyksestä on kulunut riittävästi aikaa.
+	 * Torni vahingoittaa pisimmälle päässyttä virusta.
 	 * 
 	 * @param viruses  lista viruksista
 	 * @param elapsedTime  edellisestä kutsusta kulunut aika
@@ -51,9 +52,10 @@ public class Tower {
 			for (int i = 0; i < viruses.length; i++) {
 				if (viruses[i].alive() && inRange(viruses[i])) {
 					viruses[i].takeDamage(1);
+					this.cooldown = 0.4;
+					return;
 				}
 			}
-			this.cooldown = 1;
 		}
 	}
 
