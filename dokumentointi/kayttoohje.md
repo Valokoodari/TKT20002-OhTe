@@ -18,6 +18,7 @@ ja paina sitten haluamasi kartan painiketta.
 
 ## Pelaaminen
 Tornin lisääminen kentälle tapahtuu klikkaamalla kartalta haluttua kohtaa.  
+Tornia voi päivittää klikkaamalla päivitettävää tornia.
 Tornit vahingoittavat sekunnin välein kaikkia viruksia jotka ovat niiden näköetäisyydellä.  
 Tornin näköetäisyys on merkitty harmaalla läpinäkyvällä ympyrällä tornin ympärillä.  
 Tornin hinta on sitä korkeampi mitä korkeampi vaikeustaso pelissä on. (100, 150, 200)  
