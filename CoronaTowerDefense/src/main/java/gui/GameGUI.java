@@ -12,7 +12,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import logic.Display;
+import logic.Config;
 import logic.Game;
 import towers.Tower;
 import viruses.Virus;
@@ -24,7 +24,7 @@ public class GameGUI {
 	private Game game;
 	private Scene menuScene;
 	private Stage stage;
-	private Display display;
+	private Config config;
 	
 	private int tileSize;
 	private Canvas mapCanvas;
@@ -37,17 +37,17 @@ public class GameGUI {
 	 * @param difficulty  Valitun vaikeustason nimi
 	 * @param menuScene  Scene johon palataan pelin loputtua
 	 * @param stage  Stage johon Scene asetetaan
-	 * @param display  Nykyisen näytön ominaisuudet
+	 * @param config  Ohjelman configuraatio
 	 */
-	public GameGUI(int mapNumber, String difficulty, Scene menuScene, Stage stage, Display display) {
+	public GameGUI(int mapNumber, String difficulty, Scene menuScene, Stage stage, Config config) {
 		this.menuScene = menuScene;
 		this.stage = stage;
-		this.display = display;
+		this.config = config;
 		
 		this.game = new Game(mapNumber, this.convertDifficulty(difficulty));
 		
 		int[][] map = this.game.getMap();
-		this.tileSize = this.display.height / map.length;
+		this.tileSize = this.config.displayHeight / map.length;
 		this.mapCanvas = new Canvas(this.tileSize * map[0].length, this.tileSize * map.length);
 		this.mapCanvas.setOnMouseClicked(e -> this.handleMapClick((int)e.getScreenX(), (int)e.getScreenY()));
 		
@@ -153,7 +153,7 @@ public class GameGUI {
 		Scene gameScene = new Scene(gameRoot);
 		
 		// Set the background
-		Rectangle background = new Rectangle(this.display.width, this.display.height, Color.CORNFLOWERBLUE);
+		Rectangle background = new Rectangle(this.config.displayWidth, this.config.displayHeight, Color.CORNFLOWERBLUE);
 		gameRoot.getChildren().add(background);
 		
 		// Add map canvas to root
