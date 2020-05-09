@@ -23,9 +23,9 @@ public class ConfigDao {
 			FileWriter writer = new FileWriter(file);
 
 			writer.write("## Corona Tower Defense config file\n" +
-						"saveDB=save.sql\n" +
-						"width=" + dw + "\n" +
-						"height=" + dh);
+							"saveDB=save.sql\n" +
+							"width=" + dw + "\n" +
+							"height=" + dh);
 
 			writer.close();
 		} catch (Exception e) {
@@ -39,21 +39,18 @@ public class ConfigDao {
 
 			while (scanner.hasNextLine()) {
 				String line = scanner.nextLine();
+
 				if (line.isEmpty() || line.startsWith("#")) {
 					continue;
 				} else if (line.contains(name)) {
 					scanner.close();
-					if (line.split("=").length == 2) {
-						return line.split("=")[1];
-					} else {
-						return "";
-					}
+					return line.split("=")[1];
 				}
 			}
 
 			scanner.close();
 		} catch (Exception e) {
-			return "";
+			
 		}
 
 		return "";
