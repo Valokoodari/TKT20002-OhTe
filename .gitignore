@@ -1,3 +1,4 @@
+/.vscode/
 /laskarit/viikko2/Maksukortti/nbproject/
 /laskarit/viikko2/Maksukortti/target/
 /laskarit/viikko2/Unicafe/target/
@@ -6,3 +7,5 @@
 /CoronaTowerDefense/.classpath
 /CoronaTowerDefense/.project
 /CoronaTowerDefense/.settings/
+/CoronaTowerDefense/save.sql
+/CoronaTowerDefense/config.properties
