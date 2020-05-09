@@ -22,4 +22,5 @@
 |  7.5. | 1    | Lisättiin virusten lukeminen tiedostosta             |
 |       | 1    | Valmiit roundit ja tornien päivittäminen             |
 |  9.5. | 3    | Päävalikon skaalaus ja ulkoinen konfiguraatio        |
-| yht.  | 26   |                                                      |
+|       | 1    | Dokumentaatiota, abstraktiota ja  päivityksen hinta  |
+| yht.  | 28   |                                                      |
