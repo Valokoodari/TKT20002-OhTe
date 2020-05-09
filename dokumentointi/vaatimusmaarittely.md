@@ -11,7 +11,7 @@ Pelissä on mahdollista kerätä saavutuksia esimerkiksi pelaamalla kaikki tasot
 - [x] Kolme vaikeustasoa jotka ovat valittavissa kaikilla kentillä
 - [x] Hyökkäävä torni virusten vahingoittamiseen
 - [x] Pelin voi lopettaa kesken
-- [ ] Torneja on mahdollista parantaa
+- [x] Torneja on mahdollista parantaa
 - [x] Pelissä voi hävitä
 - [x] Pelissä voi voittaa
 - [x] Peli piirtää kartan
@@ -21,9 +21,9 @@ Pelissä on mahdollista kerätä saavutuksia esimerkiksi pelaamalla kaikki tasot
 - [x] Virukset etenevät kentällä
 - [x] Tornit voivat vahingoittaa viruksia
 - [x] Virukset voivat vahingoittaa pelaajaa
-- [ ] Jokainen peli koostuu aalloista
-- [ ] Aallot sisältävät ennalta määritellyt virukset
-- [ ] Peliä voi oikeasti pelata
+- [x] Jokainen peli koostuu aalloista
+- [x] Aallot sisältävät ennalta määritellyt virukset
+- [x] Peliä voi oikeasti pelata
 
 ## Jatkokehitysideoita
 - [ ] Profiilin vaihtaminen useammalle käyttäjälle samalla laitteella
