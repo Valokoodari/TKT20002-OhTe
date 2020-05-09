@@ -2,7 +2,7 @@ package logic;
 
 import org.junit.Test;
 
-import towers.Tower;
+import logic.towers.Tower;
 
 import static org.junit.Assert.*;
 

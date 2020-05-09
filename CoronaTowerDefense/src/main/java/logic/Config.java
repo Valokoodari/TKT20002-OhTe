@@ -9,7 +9,7 @@ public class Config {
 	public String dbFileName;
 	
 	/**
-	 * Luo olion säilyttämään tietoja nykyisestä näytöstä
+	 * Luo olion säilyttämään pelin konfiguraatioita kuten näytön kokoa
 	 * 
 	 * @param width  Näytön leveys pikseleissä
 	 * @param height  Näytön korkeus pikseleissä

@@ -1,4 +1,4 @@
-package viruses;
+package logic.viruses;
 
 public class Virus {
 	private String name;

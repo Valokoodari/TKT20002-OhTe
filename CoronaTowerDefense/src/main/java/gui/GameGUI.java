@@ -15,8 +15,8 @@ import javafx.stage.Stage;
 import logic.Completion;
 import logic.Config;
 import logic.Game;
-import towers.Tower;
-import viruses.Virus;
+import logic.towers.Tower;
+import logic.viruses.Virus;
 
 public class GameGUI {
 	private Text healthText;

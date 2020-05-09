@@ -2,8 +2,8 @@ package logic;
 
 import dao.FileVirusDao;
 import dao.VirusDao;
-import towers.Tower;
-import viruses.Virus;
+import logic.towers.Tower;
+import logic.viruses.Virus;
 
 public class Game {
 	private int money;

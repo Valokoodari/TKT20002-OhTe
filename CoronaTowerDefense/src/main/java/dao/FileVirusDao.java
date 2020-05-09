@@ -3,11 +3,17 @@ package dao;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import viruses.Virus;
+import logic.viruses.Virus;
 
 public class FileVirusDao implements VirusDao {
+	/**
+	 * Lataa tiedostosta halutulle kartalle suunnitellut virusaallot
+	 * 
+	 * @param mapNumber  kartan numero
+	 * @param path  Virusten kulkema polku
+	 */
 	public Virus[][] loadViruses(int mapNumber, int[][] path) {
-		Virus[][] viruses = new Virus[60][1000];
+		Virus[][] viruses = new Virus[40][1000];
 
 		try {
 			InputStream inputStream = getClass().getResourceAsStream("/viruses/" + mapNumber + ".vir");

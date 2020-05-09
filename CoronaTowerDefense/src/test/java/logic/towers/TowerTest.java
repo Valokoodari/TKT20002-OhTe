@@ -1,6 +1,6 @@
-package towers;
+package logic.towers;
 
-import viruses.Virus;
+import logic.viruses.Virus;
 import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.*;

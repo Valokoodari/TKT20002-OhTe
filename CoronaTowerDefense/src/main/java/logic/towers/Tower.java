@@ -1,6 +1,6 @@
-package towers;
+package logic.towers;
 
-import viruses.Virus;
+import logic.viruses.Virus;
 
 public class Tower {
 	private double cooldown;

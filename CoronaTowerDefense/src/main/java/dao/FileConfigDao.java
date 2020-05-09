@@ -8,6 +8,12 @@ public class FileConfigDao implements ConfigDao {
 	private String fileName = "config.properties";
 	private File file;
 
+	/**
+	 * Tarkistaa onko konfiguraatiotiedosto olemassa ja luo tarvittaessa uuden tiedoston.
+	 * 
+	 * @param displayWidth  Näytön leveys pikseleissä
+	 * @param displayHeight  Näytön korkeus pikseleissä
+	 */
 	public FileConfigDao(int displayWidth, int displayHeight) {
 		this.file = new File(this.fileName);
 
@@ -56,6 +62,9 @@ public class FileConfigDao implements ConfigDao {
 		return "";
 	}
 
+	/**
+	 * Lukee ja palauttaa konfiguraatiotiedoston mukaisen tietokantatiedoston nimen
+	 */
 	public String readSaveFileName() {
 		String value = readProperty("saveDB");
 
@@ -67,6 +76,9 @@ public class FileConfigDao implements ConfigDao {
 		return "save.sql"; 
 	}
 
+	/**
+	 * Lukee ja palauttaa konfiguraatiotiedoston mukaisen näytön leveyden pikseleissä
+	 */
 	public int readDisplayWidth() {
 		String value = readProperty("width");
 
@@ -78,6 +90,9 @@ public class FileConfigDao implements ConfigDao {
 		return 1920;
 	}
 
+	/**
+	 * Lukee ja palauttaa konfiguraatiotiedoston mukaisen näytön korkeuden pikseleissä
+	 */
 	public int readDisplayHeight() {
 		String value = readProperty("height");
 

@@ -8,6 +8,11 @@ import java.sql.Statement;
 public class SqlSaveDao implements SaveDao {
 	private String connectionDriver;
 
+	/**
+	 * Tarkistaa onko tietokanta olemassa ja luo tarvittaessa uuden.
+	 * 
+	 * @param dbFileName  tietokantatiedoston nimi
+	 */
 	public SqlSaveDao(String dbFileName) {
 		this.connectionDriver = "jdbc:sqlite:" + dbFileName;
 
@@ -44,6 +49,12 @@ public class SqlSaveDao implements SaveDao {
 		}
 	}
 
+	/**
+	 * Tallentaa suorituksen tietokantaan myöhempää varten.
+	 * 
+	 * @param mapNumber  suoritetun kartan numero
+	 * @param difficulty  suoritettu vaikeustaso numerona
+	 */
 	public void saveCompletion(int mapNumber, int difficulty) {
 		try {
 			Connection c = DriverManager.getConnection(this.connectionDriver);
@@ -61,6 +72,12 @@ public class SqlSaveDao implements SaveDao {
 		}
 	}
 
+	/**
+	 * Lukee tietokannasta kaikki onnistuneet suoritukset
+	 * 
+	 * @param maps  karttojen lukumäärä
+	 * @param difficulties  vaikeustasojen lukumäärä
+	 */
 	public boolean[][] loadCompletion(int maps, int difficulties) {
 		boolean[][] completion = new boolean[maps][difficulties];
 
