@@ -1,8 +1,17 @@
 # Käyttöohje
 Käyttöohje olettaa, että ohjelma suoritetaan pakattuna .jar-tiedostona
 
+## Konfiguraatio
+Ohjelma luo ensimmäisellä käynnistyskerralla tiedoston config.properties ja täyttää sen
+käytössä olevalle kokoonpanolle sopivilla oletusarvoilla.
+
+### Arvot
+- saveDB: tietokantatiedosto, johon pelin tila tallennetaan
+- width: näytön leveys pikseleissä
+- height: näytön korkeus pikseleissä
+
 ## Päävalikko
-Aloittaaksesi pelin valitse ensin vaikeustaso (Easy, Medium, Hard)  
+Aloittaaksesi pelin valitse ensin vaikeustaso (Easy, Medium, Hard)
 ja paina sitten haluamasi kartan painiketta.  
 
 ![Kuva päävalikosta](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/kuvat/paavalikko.jpg)  
