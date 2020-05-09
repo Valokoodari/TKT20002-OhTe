@@ -18,4 +18,8 @@
 | 28.4. | 1    | Rahajärjestelmä ja lisää testejä                     |
 |       | 1    | Javadocin käyttöönotto ja kirjoittaminen             |
 |       | 1    | Alustava käyttöohje pelin pelaamiseen                |
-| yht.  | 20   |                                                      |
+|  3.5. | 1    | Valmistautumista roundien lisäämiseen                |
+|  7.5. | 1    | Lisättiin virusten lukeminen tiedostosta             |
+|       | 1    | Valmiit roundit ja tornien päivittäminen             |
+|  9.5. | 3    | Päävalikon skaalaus ja ulkoinen konfiguraatio        |
+| yht.  | 26   |                                                      |
