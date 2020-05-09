@@ -24,10 +24,11 @@ Pelissä on mahdollista kerätä saavutuksia esimerkiksi pelaamalla kaikki tasot
 - [x] Jokainen peli koostuu aalloista
 - [x] Aallot sisältävät ennalta määritellyt virukset
 - [x] Peliä voi oikeasti pelata
+- [x] Edistyminen tallentuu automaattisesti
+- [ ] Päävalikko näyttää onnistuneet suoritukset
 
 ## Jatkokehitysideoita
 - [ ] Profiilin vaihtaminen useammalle käyttäjälle samalla laitteella
-- [ ] Edistyminen tallentuu automaattisesti
 - [ ] Saavutuksia merkittävistä onnistumisista pelissä
 - [ ] Lisää kenttiä
 - [ ] Lisää torneja

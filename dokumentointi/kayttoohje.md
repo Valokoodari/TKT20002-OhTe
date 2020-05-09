@@ -13,6 +13,8 @@ käytössä olevalle kokoonpanolle sopivilla oletusarvoilla.
 ## Päävalikko
 Aloittaaksesi pelin valitse ensin vaikeustaso (Easy, Medium, Hard)
 ja paina sitten haluamasi kartan painiketta.  
+Kartan napin alapuolella näkyy vaikeustaso vihreällä, jos kyseinen
+kartta on pelattu läpi kyseisellä vaikeustasolla. Muussa tapauksessa vaikeustason nimi on punainen.
 
 ![Kuva päävalikosta](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/kuvat/paavalikko.jpg)  
 

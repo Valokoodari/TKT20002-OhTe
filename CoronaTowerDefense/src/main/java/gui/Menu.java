@@ -1,6 +1,5 @@
 package gui;
 
-import dao.ConfigDao;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.geometry.Rectangle2D;
@@ -17,10 +16,12 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import logic.Completion;
 import logic.Config;
 
 public class Menu extends Application {
-	private Config config;
+    private Config config;
+    private Completion completion;
 	
     public static void main(String[] args) {
         launch(args);
@@ -33,9 +34,10 @@ public class Menu extends Application {
     	stage.setFullScreen(true);
     	stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
     	
-    	// Measure the display
+    	// Measure the display and load configurations
     	Rectangle2D screenBounds = Screen.getPrimary().getBounds();
-    	this.config = new Config((int)screenBounds.getWidth(), (int)screenBounds.getHeight());
+        this.config = new Config((int)screenBounds.getWidth(), (int)screenBounds.getHeight());
+        this.completion = new Completion(this.config, 3, 3);
 
     	// Menu GUI
         Pane menuRoot = new Pane();
@@ -70,6 +72,9 @@ public class Menu extends Application {
 
         Button map2 = new Button("Start\nMap 2");
         startBox.getChildren().add(map2);
+
+        // Map completion
+        menuRoot.getChildren().add(this.completionDisplay());
         
         // Difficulty selection
         VBox diffBox = new VBox();
@@ -101,7 +106,7 @@ public class Menu extends Application {
         	RadioButton selectedButton = (RadioButton) diffGroup.getSelectedToggle();
         	String difficulty = selectedButton.getText();
         	
-        	GameGUI gameGui = new GameGUI(0, difficulty, menuScene, stage, config);
+        	GameGUI gameGui = new GameGUI(0, difficulty, menuScene, stage, config, completion);
         	gameGui.setScene();
         	gameGui.startGame();
         });
@@ -114,5 +119,35 @@ public class Menu extends Application {
         
         // Make the window visible
         stage.show();
+    }
+
+    private HBox completionDisplay() {
+        HBox completionBox = new HBox();
+        completionBox.setLayoutY(0.328 * this.config.displayHeight);
+        completionBox.setLayoutX(0.234 * this.config.displayWidth);
+        completionBox.setSpacing(0.137 * this.config.displayWidth);
+
+        VBox[] mapComp = new VBox[3];
+
+        for (int i = 0; i < mapComp.length; i++) {
+            mapComp[i] = new VBox();
+            Text[] texts = new Text[3];
+            texts[0] = new Text("Easy");
+            texts[1] = new Text("Normal");
+            texts[2] = new Text("Hard");
+
+            for (int j = 0; j < texts.length; j++) {
+                if (this.completion.isCompleted(i, j)) {
+                    texts[j].setFill(Color.GREEN);
+                } else {
+                    texts[j].setFill(Color.RED);
+                }
+                mapComp[i].getChildren().add(texts[j]);
+            }
+
+            completionBox.getChildren().add(mapComp[i]);
+        }
+
+        return completionBox;
     }
 }

@@ -23,4 +23,6 @@
 |       | 1    | Valmiit roundit ja tornien päivittäminen             |
 |  9.5. | 3    | Päävalikon skaalaus ja ulkoinen konfiguraatio        |
 |       | 1    | Dokumentaatiota, abstraktiota ja  päivityksen hinta  |
-| yht.  | 28   |                                                      |
+|       | 2    | Edistymisen tallentaminen SQL-tietokantaan           |
+|       | 1    | Edistymisen näyttäminen päävalikossa                 |
+| yht.  | 31   |                                                      |

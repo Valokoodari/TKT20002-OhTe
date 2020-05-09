@@ -12,6 +12,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import logic.Completion;
 import logic.Config;
 import logic.Game;
 import towers.Tower;
@@ -25,6 +26,10 @@ public class GameGUI {
 	private Scene menuScene;
 	private Stage stage;
 	private Config config;
+
+	private int mapNumber;
+	private int difficulty;
+	private Completion completion;
 	
 	private int tileSize;
 	private Canvas mapCanvas;
@@ -39,12 +44,16 @@ public class GameGUI {
 	 * @param stage  Stage johon Scene asetetaan
 	 * @param config  Ohjelman configuraatio
 	 */
-	public GameGUI(int mapNumber, String difficulty, Scene menuScene, Stage stage, Config config) {
+	public GameGUI(int mapNumber, String difficulty, Scene menuScene, Stage stage, Config config, Completion completion) {
 		this.menuScene = menuScene;
 		this.stage = stage;
 		this.config = config;
 		
-		this.game = new Game(mapNumber, this.convertDifficulty(difficulty));
+		this.mapNumber = mapNumber;
+		this.difficulty = this.convertDifficulty(difficulty);
+		this.completion = completion;
+
+		this.game = new Game(mapNumber, this.difficulty);
 		
 		int[][] map = this.game.getMap();
 		this.tileSize = this.config.displayHeight / map.length;
@@ -67,7 +76,11 @@ public class GameGUI {
 		
 		if (status != 0) {
 			this.animationTimer.stop();
-			
+
+			if (status == 1) {
+				this.completion.addCompletion(this.mapNumber, this.difficulty);
+			}
+
 			this.stage.setScene(this.menuScene);
 			this.stage.setFullScreen(true);
 		}

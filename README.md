@@ -48,3 +48,4 @@ Generoitua dokumentaatiota pääsee selaamaan avaamalla selaimessa target/site/a
 - Ohjelman napeista piirtyy joillakin järjestelmillä vain tekstit. Ei vaikutusta ohjelman toiminnallisuuteen.
 - Pelin päävalikko ei näy oikein alussa. Korjaantuu aloittamalla pelin ja palaamalla.
 - Virukset poistuvat polulta eivätkä etene loppuun saakka. Satunnainen ja harvinainen.
+- Vanha peli jää taustalle, jos päävalikkoon palataan manuaalisesti. (Käynnistä peli uudelleen)
