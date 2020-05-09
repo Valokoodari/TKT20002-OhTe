@@ -28,13 +28,17 @@ public class Tower {
 	 * 
 	 * @param path  päivitettävän polun indeksi
 	 */
-	public void upgrade(int path) {
+	public boolean upgrade(int path) {
 		if (path < 0 || path >= this.upgrades.length) {
-			return;
+			return false;
 		}
+		
 		if (this.upgrades[path] < 3) {
 			this.upgrades[path]++;
+			return true;
 		}
+
+		return false;
 	}
 
 	/**

@@ -1,5 +1,6 @@
 package logic;
 
+import dao.FileVirusDao;
 import dao.VirusDao;
 import towers.Tower;
 import viruses.Virus;
@@ -40,8 +41,9 @@ public class Game {
 		this.finalRound = 10 * (int) Math.pow(2, difficulty);
 		
 		this.towers = new Tower[this.getMap().length][this.getMap()[0].length];
-		
-		this.allViruses = new VirusDao().loadViruses(mapNumber, this.map.getPath());
+
+		VirusDao virusDao = new FileVirusDao();
+		this.allViruses = virusDao.loadViruses(mapNumber, this.map.getPath());
 		this.setViruses();
 	}
 
@@ -162,6 +164,7 @@ public class Game {
 	 */
 	public void click(int x, int y) {
 		int towerPrice = 100 + this.difficulty * 50;
+		int upgradePrice = towerPrice / 10;
 
 		if (this.map.getMap()[y][x] == 0) {
 			if (this.towers[y][x] == null) {
@@ -170,7 +173,11 @@ public class Game {
 					this.money -= towerPrice;
 				}
 			} else {
-				this.towers[y][x].upgrade(1);
+				if (this.money >= upgradePrice) {
+					if (this.towers[y][x].upgrade(1)) {
+						this.money -= upgradePrice;
+					}
+				}
 			}
 		}
 	}

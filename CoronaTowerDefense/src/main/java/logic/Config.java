@@ -1,6 +1,7 @@
 package logic;
 
 import dao.ConfigDao;
+import dao.FileConfigDao;
 
 public class Config {
 	public int displayWidth;
@@ -14,7 +15,7 @@ public class Config {
 	 * @param height  Näytön korkeus pikseleissä
 	 */
 	public Config(int displayWidth, int displayHeight) {
-		ConfigDao configDao = new ConfigDao(displayWidth, displayHeight);
+		ConfigDao configDao = new FileConfigDao(displayWidth, displayHeight);
 
 		this.displayWidth = configDao.readDisplayWidth();
 		this.displayHeight = configDao.readDisplayHeight();

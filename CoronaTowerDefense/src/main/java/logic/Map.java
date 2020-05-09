@@ -1,12 +1,11 @@
 package logic;
 
 import java.util.Arrays;
+import dao.FileMapDao;
 import dao.MapDao;
-//import dao.VirusDao;
 
 public class Map {
 	private int[][] map;
-	//private Viruses[][];
 	private int[] startPos;
 	private int[] endPos;
 	private int[][] path;
@@ -18,8 +17,8 @@ public class Map {
 	 * @param mapNumber  Ladattavan kartan nimi
 	 */
 	public Map(int mapNumber) {
-		this.map = new MapDao().loadMap(mapNumber);
-		//this.viruses = new VirusDao().loadViruses(mapNumber);
+		MapDao mapDao = new FileMapDao();
+		this.map = mapDao.loadMap(mapNumber);
 
 		this.findStartAndEndPositions();
 		this.findPath();
