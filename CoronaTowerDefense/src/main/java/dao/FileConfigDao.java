@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.util.Scanner;
 
 public class FileConfigDao implements ConfigDao {
-	private String fileName = "config.properties";
+	private String fileName;
 	private File file;
 
 	/**
@@ -13,8 +13,10 @@ public class FileConfigDao implements ConfigDao {
 	 * 
 	 * @param displayWidth  Näytön leveys pikseleissä
 	 * @param displayHeight  Näytön korkeus pikseleissä
+	 * @param fileName  Konfiguraatiotiedoston nimi
 	 */
-	public FileConfigDao(int displayWidth, int displayHeight) {
+	public FileConfigDao(int displayWidth, int displayHeight, String fileName) {
+		this.fileName = fileName;
 		this.file = new File(this.fileName);
 
 		if (!file.exists()) {
@@ -29,7 +31,7 @@ public class FileConfigDao implements ConfigDao {
 			FileWriter writer = new FileWriter(file);
 
 			writer.write("## Corona Tower Defense config file\n" +
-							"saveDB=save.sql\n" +
+							"saveDB=save.db\n" +
 							"width=" + dw + "\n" +
 							"height=" + dh);
 
@@ -73,7 +75,7 @@ public class FileConfigDao implements ConfigDao {
 		}
 
 		System.out.println("Invalid config file!");
-		return "save.sql"; 
+		return "save.db"; 
 	}
 
 	/**

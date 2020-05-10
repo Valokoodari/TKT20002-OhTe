@@ -28,10 +28,6 @@ public class Virus {
 		this.path = path;
 	}
 	
-	public double getSpeed() {
-		return this.speed;
-	}
-	
 	public double[] getPos() {
 		return this.position;
 	}

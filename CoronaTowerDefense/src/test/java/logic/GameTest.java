@@ -56,6 +56,15 @@ public class GameTest {
 	}
 
 	@Test
+	public void towerCanBePlacedAndUpgraded() {
+		game.click(0, 0);
+		assertEquals(0, game.getTowers()[0][0].getUpgrades()[1]);
+		
+		game.click(0, 0);
+		assertEquals(1, game.getTowers()[0][0].getUpgrades()[1]);
+	}
+
+	@Test
 	public void towersCannotBePlacedOnPathTile() {
 		assertEquals(0, countTowers(game.getTowers()));
 		game.click(0, 2);

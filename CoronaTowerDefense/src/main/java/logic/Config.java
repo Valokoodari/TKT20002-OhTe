@@ -15,7 +15,7 @@ public class Config {
 	 * @param height  Näytön korkeus pikseleissä
 	 */
 	public Config(int displayWidth, int displayHeight) {
-		ConfigDao configDao = new FileConfigDao(displayWidth, displayHeight);
+		ConfigDao configDao = new FileConfigDao(displayWidth, displayHeight, "config.properties");
 
 		this.displayWidth = configDao.readDisplayWidth();
 		this.displayHeight = configDao.readDisplayHeight();
