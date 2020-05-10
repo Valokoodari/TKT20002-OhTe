@@ -25,4 +25,5 @@
 |       | 1    | Dokumentaatiota, abstraktiota ja  päivityksen hinta  |
 |       | 2    | Edistymisen tallentaminen SQL-tietokantaan           |
 |       | 1    | Edistymisen näyttäminen päävalikossa                 |
-| yht.  | 31   |                                                      |
+| 10.5. | 2    | Lisää testejä lopulliseen versioon                   |
+| yht.  | 33   |                                                      |
