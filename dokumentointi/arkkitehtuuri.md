@@ -26,13 +26,13 @@ tiedostoihin. Täten on siis helposti mahdollista lisätä peliin uusia karttoja
 Kaikki seuraavat toiminnallisuudet ovat huomattavasti yksinkertaisemmista tapauksista kuin mitä pelin aikana
 todellisuudessa tapahtuu.
 
-Pelin lataaminen aloitettaessa
+Pelin lataaminen aloitettaessa.  
 ![Sekvenssikaavio aloituksesta](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/kuvat/sekvenssikaavio-alku.jpg)
 
-Tornin ostaminen pelissä, kun klikattu kohta kartalla on vapaata aluetta.
+Tornin ostaminen pelissä, kun klikattu kohta kartalla on vapaata aluetta.  
 ![Sekvenssikaavio tornin ostamisesta](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/kuvat/sekvenssikaavio-osto.jpg)
 
-Pelin päivittyminen toivottavasti vähintään 60 kertaa sekunnissa.
+Pelin päivittyminen toivottavasti vähintään 60 kertaa sekunnissa.  
 ![Sekvenssikaavio pelin tickistä](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/kuvat/sekvenssikaavio-paivitys.jpg)
 
 ## Rakenteen heikkoudet
