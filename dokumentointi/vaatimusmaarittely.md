@@ -25,7 +25,8 @@ Pelissä on mahdollista kerätä saavutuksia esimerkiksi pelaamalla kaikki tasot
 - [x] Aallot sisältävät ennalta määritellyt virukset
 - [x] Peliä voi oikeasti pelata
 - [x] Edistyminen tallentuu automaattisesti
-- [x] Päävalikko näyttää onnistuneet suoritukset
+- [x] Päävalikko näyttää onnistuneet suoritukset
+- [x] konfiguraatiotiedosto tietokannalle ja näytölle
 
 ## Jatkokehitysideoita
 - [ ] Profiilin vaihtaminen useammalle käyttäjälle samalla laitteella
