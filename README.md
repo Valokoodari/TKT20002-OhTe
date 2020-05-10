@@ -2,10 +2,10 @@
 
 ## Dokumentaatio
 [Vaatimusmäärittely](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/vaatimusmaarittely.md)  
-[Työaikakirjanpito](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/tyoaikakirjanpito.md) 
-[Testausdokumentti](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/testaus.md) 
+[Työaikakirjanpito](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/tyoaikakirjanpito.md)  
+[Testausdokumentti](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/testaus.md)  
 [Arkkitehtuuri](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/arkkitehtuuri.md)  
-[Käyttöohje](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/kayttoohje.md)
+[Käyttöohje](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/kayttoohje.md)  
 
 ## Releaset
 [Viikko 5](https://github.com/Valokoodari/tkt-ohte-ht/releases/tag/v0.5.1)  
