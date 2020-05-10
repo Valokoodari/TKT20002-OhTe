@@ -25,6 +25,7 @@
 |       | 1    | Dokumentaatiota, abstraktiota ja  päivityksen hinta  |
 |       | 2    | Edistymisen tallentaminen SQL-tietokantaan           |
 |       | 1    | Edistymisen näyttäminen päävalikossa                 |
-| 10.5. | 2    | Lisää testejä lopulliseen versioon                   |
+| 10.5. | 2    | Lisää testejä lopulliseen versioon                   |
 |       | 1    | Javadocin korjausta ja testausdokumentti             |
-| yht.  | 34   |                                                      |
+|       | 2    | Arkkitehtuuridokumentaatio                           |
+| yht.  | 36   |                                                      |
