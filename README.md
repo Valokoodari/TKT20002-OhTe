@@ -2,7 +2,8 @@
 
 ## Dokumentaatio
 [Vaatimusmäärittely](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/vaatimusmaarittely.md)  
-[Työaikakirjanpito](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/tyoaikakirjanpito.md)  
+[Työaikakirjanpito](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/tyoaikakirjanpito.md) 
+[Testausdokumentti](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/testaus.md) 
 [Arkkitehtuuri](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/arkkitehtuuri.md)  
 [Käyttöohje](https://github.com/Valokoodari/tkt-ohte-ht/blob/master/dokumentointi/kayttoohje.md)
 
@@ -43,9 +44,3 @@ Generoitunut raportti löytyy tiedostosta target/site/checkstyle.html
 mvn javadoc:javadoc
 ```
 Generoitua dokumentaatiota pääsee selaamaan avaamalla selaimessa target/site/apidocs/index.html
-
-## Tunnetut bugit
-- Ohjelman napeista piirtyy joillakin järjestelmillä vain tekstit. Ei vaikutusta ohjelman toiminnallisuuteen.
-- Pelin päävalikko ei näy oikein alussa. Korjaantuu aloittamalla pelin ja palaamalla.
-- Virukset poistuvat polulta eivätkä etene loppuun saakka. Satunnainen ja harvinainen.
-- Vanha peli jää taustalle, jos päävalikkoon palataan manuaalisesti. (Käynnistä peli uudelleen)
