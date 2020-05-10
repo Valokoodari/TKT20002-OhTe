@@ -10,6 +10,7 @@
 ## Releaset
 [Viikko 5](https://github.com/Valokoodari/tkt-ohte-ht/releases/tag/v0.5.1)  
 [Viikko 6](https://github.com/Valokoodari/tkt-ohte-ht/releases/tag/v0.6.1)  
+[Loppupalautus](https://github.com/Valokoodari/tkt-ohte-ht/releases/tag/v1.0.0)  
 
 ## Komentorivitoiminnot
 ### Ohjelman pakkaaminen suoritettavaksi tiedostoksi

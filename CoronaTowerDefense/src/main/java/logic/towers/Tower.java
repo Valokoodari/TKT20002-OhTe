@@ -27,6 +27,7 @@ public class Tower {
 	 * Päivittää tornia yhden pykälän annetulla päivityspolulla.
 	 * 
 	 * @param path  päivitettävän polun indeksi
+	 * @return  tosi, jos päivitys tapahtui
 	 */
 	public boolean upgrade(int path) {
 		if (path < 0 || path >= this.upgrades.length) {

@@ -43,6 +43,7 @@ public class GameGUI {
 	 * @param menuScene  Scene johon palataan pelin loputtua
 	 * @param stage  Stage johon Scene asetetaan
 	 * @param config  Ohjelman configuraatio
+	 * @param completion  Säilyttää tietoa suoritetuista tasoista
 	 */
 	public GameGUI(int mapNumber, String difficulty, Scene menuScene, Stage stage, Config config, Completion completion) {
 		this.menuScene = menuScene;

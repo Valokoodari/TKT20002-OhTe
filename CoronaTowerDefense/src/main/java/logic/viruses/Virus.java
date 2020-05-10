@@ -14,6 +14,7 @@ public class Virus {
 	 * 
 	 * @param startX  Aloitussijainnin x-koordinaatti
 	 * @param startY  Aloitussijainnin y-koordinaatti
+	 * @param health  Aloitusmäärä kestävyyttä
 	 * @param path    Viruksen kulkeman reitin pisteet
 	 */
 	public Virus(double startX, double startY, int health, int[][] path) {

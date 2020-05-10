@@ -26,4 +26,5 @@
 |       | 2    | Edistymisen tallentaminen SQL-tietokantaan           |
 |       | 1    | Edistymisen näyttäminen päävalikossa                 |
 | 10.5. | 2    | Lisää testejä lopulliseen versioon                   |
-| yht.  | 33   |                                                      |
+|       | 1    | Javadocin korjausta ja testausdokumentti             |
+| yht.  | 34   |                                                      |

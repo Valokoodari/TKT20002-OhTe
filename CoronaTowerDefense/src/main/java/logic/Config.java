@@ -11,8 +11,8 @@ public class Config {
 	/**
 	 * Luo olion säilyttämään pelin konfiguraatioita kuten näytön kokoa
 	 * 
-	 * @param width  Näytön leveys pikseleissä
-	 * @param height  Näytön korkeus pikseleissä
+	 * @param displayWidth  Näytön leveys pikseleissä
+	 * @param displayHeight  Näytön korkeus pikseleissä
 	 */
 	public Config(int displayWidth, int displayHeight) {
 		ConfigDao configDao = new FileConfigDao(displayWidth, displayHeight, "config.properties");
